@@ -28,6 +28,7 @@ export const HomePage = ()=>{
     },[])
 
     function handleRemoveItem(_id){
+        console.log(_id)
         fetch('https://mock11-backend.onrender.com/removeItem' , {
             method:'DELETE',
             body:JSON.stringify({_id}),
@@ -36,6 +37,7 @@ export const HomePage = ()=>{
             }
         }).then((res)=>{
             alert('sucefully remove...')
+            console.log(res)
             window.location.reload();
         }).catch((err)=>{
             console.log(err)
@@ -53,7 +55,6 @@ export const HomePage = ()=>{
             }
         }).then((res)=>{
             alert('sucefully added in bookmark...')
-            window.location.reload();
         }).catch((err)=>{
             console.log(err)
         })
